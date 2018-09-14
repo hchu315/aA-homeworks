@@ -1,0 +1,6 @@
+<form action="<%=user_url  %>" method="post">
+  <input type="hidden" name="authenticity_token" value=" <%=form_authenticity_token %>">
+  <label for="email">
+  Welcome, <%= @user.email %>!
+  </label>
+</form>

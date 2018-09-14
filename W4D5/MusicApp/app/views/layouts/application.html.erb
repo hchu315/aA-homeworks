@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    Music Appppppppp
+  </header>
+  <head>
+    <title>MusicApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if logged_in? %>
+    <!-- <%# current_user.email %> -->
+    <form action="<%=session_url  %>" method="post">
+      <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" name="logout" value="Sign out">
+  </form>
+    <% else %>
+      <a href="<%=new_session_url  %>">Sign in</a>
+      <a href="<%=new_user_url %>">Create an account</a>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
+
+
+<!--Create login/signup views and edit application.html.erb layout so that a logged in user is displayed a "sign-out" button and a logged-out user is displayed links to sign-up or sign-in pages. -->

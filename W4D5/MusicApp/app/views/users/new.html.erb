@@ -1,0 +1,10 @@
+<h1>Pandora's Box</h1>
+<h3>Create your account</h3>
+<form action="<%=users_url  %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%form_authenticity_token%>">
+  <label for="email">Email:</label>
+  <input type="string" name="user[email]" value="">
+  <label for="password">Password:</label>
+  <input type="password" name="user[password]" value="">
+  <input type="submit" value="Create!">
+</form>
